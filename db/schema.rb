@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627160824) do
+ActiveRecord::Schema.define(version: 20160627162423) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160627160824) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "soft_token"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160627160824) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "soft_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

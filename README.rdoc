@@ -1,1 +1,4 @@
 We want non-registered users (which we’ll call soft users) to be able to create tasks without registering. After they create a 2 tasks, we will require registration before any additional tasks can be created. If the app is well-designed, our Users should be excited to participate when we trigger the next stage in the engagement cycle. The challenge is tracking their activity, then mapping it to their user account after registration
+
+Ruby - 2.2.3
+Rails - 4.2.6

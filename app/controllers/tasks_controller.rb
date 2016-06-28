@@ -24,8 +24,12 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    @user = current_user
     @task = Task.new(task_params)
 
+    if @user.soft_user?
+      @task.soft_token = @user.soft_token
+    end
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }

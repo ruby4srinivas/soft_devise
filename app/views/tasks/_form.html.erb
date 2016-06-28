@@ -1,4 +1,5 @@
-<%= form_for(@task) do |f| %>
+
+<%= form_for(@task, remote: true) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -13,7 +14,7 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'task-name' %>
   </div>
   <div class="field">
     <%= f.label :complete %><br>
@@ -23,7 +24,15 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<script>
+  $(function(){
+     $('.task-name').change(function(){
+         $('.edit_task').submit();
+     }) ;
+  });
+</script>

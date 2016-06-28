@@ -20,7 +20,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+    <%= f.hidden_field :soft_token, value: current_user.soft_token %>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
